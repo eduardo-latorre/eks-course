@@ -1,0 +1,25 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata: 
+  name: my-first-cluster
+  region: us-east-1
+
+nodeGroups:
+  - name: ng-default
+    instanceType: t3.micro
+    desiredCapacity: 10
+
+# vpc:
+#   id: "vpc-11111"
+#   subnets:
+#     private:
+#       us-west-2a:
+#           id: "subnet-0ff156e0c4a6d300c"
+#       us-west-2c:
+#           id: "subnet-0426fb4a607393184"
+#     public:
+#       us-west-2a:
+#           id: "subnet-0153e560b3129a696"
+#       us-west-2c:
+#           id: "subnet-009fa0199ec203c37"

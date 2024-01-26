@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  tomcat-deploy
+  namespace: default
+  labels:
+    app:  my-backend
+spec:
+  selector:
+    matchLabels:
+      app: my-backend
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app:  my-backend
+    spec:
+      containers:
+      - name:  my-tomcat-container
+        image:  tomcat
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort:  8080

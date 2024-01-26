@@ -1,0 +1,25 @@
+AMI = Amazon Machine Images
+
+EKS Data Plane, three ways to create a EKS cluster
+- Amazon EC2 - Self Managed Node Groups: You maintain EC2 instances, upgrades and use custom AMI
+- Amazon EC2 - Managed Node Groups: AWS maintains EC2, upgrades and AMI 
+- AWS Fargate - Serverless: No EC2 instances
+
+Other tools can be integrated:
+- kubectl 
+- graphana, prometheus, fluentbit, etc.
+
+Costs: 
+- Master: flat charge 10 cent/hour
+- Nodes: price depends on the EC2 (m5.*)
+
+Amount of PODs
+- Depends on the instance types, for example, with a t3.micro you can only run 4 PODs
+- The bigger the instance the more pods you can create
+
+Spin up a EKS cluster:
+- AWS Console
+- CloudFormation
+- AWS CLI 
+- eksctl (Preferred)
+- DevOps tools (Jenkins, Gitlab)
