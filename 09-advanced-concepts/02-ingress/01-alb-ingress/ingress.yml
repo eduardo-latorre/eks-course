@@ -5,7 +5,7 @@ metadata:
   namespace: ${NS}
   annotations:
     alb.ingress.kubernetes.io/load-balancer-name: ${NS}-ingress
-    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/target-type: instance # (ip|instance) This annotation refers if it goes to ip or instance
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/healthcheck-path: /healthz
 spec:

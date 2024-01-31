@@ -29,3 +29,6 @@ kubectl describe sa <sa-name> -n <namespace>
 
 # Gets the events from a namspaces
 kubectl get events -n <namespace>
+
+# Get into a container
+kubectl exec -it <container-name> -- /bin/bash

@@ -84,3 +84,9 @@ kubectl get ingress -n apps
 
 # Store the ingress URL in a env var
 export ALB_URL=$(kubectl get -n apps ingress/apps-ingress -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+
+# Execute commands to hit the endpoints
+curl ${ALB_URL}/first
+curl ${ALB_URL}/second
+
+# You can check the rule in EC2 -> LoadBalancer -> Select the LB -> Listeners and rules
